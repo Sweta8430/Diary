@@ -2,9 +2,14 @@ const SecretDiary = require("./SecretDiary");
 const Entries = require("./Entries");
 
 console.log("HIIII");
-const myEntries = new Entries("abc");
-const myEntries1 = new Entries("123");
-console.log(myEntries.getAddEntry());
+
+const myEntries = new SecretDiary(false);
+const entries = new Entries("abc");
+const entries1 = new Entries("123");
+const entries2 = new Entries("Sweta");
+myEntries.getAddEntry(entries);
+myEntries.getAddEntry(entries1);
 console.log(myEntries.getEntries());
-console.log(myEntries1.getAddEntry());
+const myEntries1 = new SecretDiary(true);
+console.log(myEntries1.getAddEntry(entries2));
 console.log(myEntries1.getEntries());

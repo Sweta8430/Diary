@@ -1,14 +1,23 @@
 class SecretDiary {
-  #entries;
-  status = true;
-  constructor(entries) {
-    this.entries = entries;
+  #totalEntries;
+  #status;
+  constructor(status) {
+    this.#totalEntries = [];
+    this.#status = status;
   }
-  getAddEntry() {
-    return `Diary is Locked can not make an Entry`;
+  getAddEntry(entry) {
+    if (this.#status === true) {
+      return "Diary is locked can not add anything.";
+    } else {
+      this.#totalEntries.push(entry);
+    }
   }
   getEntries() {
-    return `Diary is Locked can not see an Entry`;
+    if (this.#status === true) {
+      return "Diary is Locked can not see an Entry.";
+    } else {
+      return this.#totalEntries;
+    }
   }
 }
 

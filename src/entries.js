@@ -1,18 +1,8 @@
 class Entries {
-  status = false;
-  #entries;
+  entries;
   constructor(newEntry) {
-    this.#entries = newEntry;
-  }
-  getAddEntry() {
-    return this.#entries;
-  }
-
-  setAddEntry(entry) {
-    this.#entries += entry;
-  }
-  getEntries() {
-    return this.#entries;
+    this.entries = newEntry;
   }
 }
+
 module.exports = Entries;
